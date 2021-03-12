@@ -1,18 +1,50 @@
-# Creation of REST API with SpringBoot and Java
+# Creation of REST API with SpringBoot and Java in combination with code wars Kata
 
-Source code shows REST API creation with Springboot and Java.
+The link to kata can be found [here](https://www.codewars.com/kata/58583922c1d5b415b00000ff/train/java)
 
-Full Java Source of [Medium Article](https://medium.com/@sreeharikv112/rest-api-with-springboot-kotlin-java-f01216fd25a1)
+## Api Endpoints
 
-Majorly used request mappings are @GetMapping, @PostMapping, @DeleteMapping, @PutMapping.
+##### Get Array of all fighters
+`street-fighter/all-fighters`  
 
-This project exposes
+```
+{
+    "fighers" : [
+    ["figher1" "figher2" "figher1" "figher2"]
+    ["figher1" "figher2""figher1" "figher2"]
+    ]
+}
+```
 
-1. [Post Mapping](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
-2. [Get Mapping](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
-3. [Delete Mapping](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
-4. [Search using Get Mapping](https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/web/bind/annotation/RequestMapping.html)
+##### Get current position
+`street-fighter/current-position`
+```
+{
+    "position" {
+    "x" : 1,
+    "y" : 1
+    }
+}
+```
 
+##### Get new position after a movement command
+`street-fighter/move/{move-cmd}`
 
-Koltin version of the project can be found [here GithubProject](https://github.com/sreeharikv112/springbootrestapikt)
+move-cmd:
+- up
+- left
+- down
+- right
 
+```
+{
+    "position" {
+    "x" : 1,
+    "y" : 1
+    }
+}
+```
+
+## Persistance DAOs
+- List of all fighters
+- Current position

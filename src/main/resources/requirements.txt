@@ -1,5 +1,6 @@
 features,
 street-fighter/all-fighters ()
+street-fighter/move/("up"/"left"/"down"/"right")
 {
     "fighers" : [
     ["figher1" "figher2" "figher1" "figher2"]
