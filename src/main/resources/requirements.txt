@@ -1,0 +1,32 @@
+features,
+street-fighter/all-fighters ()
+{
+    "fighers" : [
+    ["figher1" "figher2" "figher1" "figher2"]
+    ["figher1" "figher2""figher1" "figher2"]
+    ]
+}
+
+street-fighter/current-position  ()
+{
+    "position" {
+    "x" : 1,
+    "y" : 1
+    }
+}
+
+street-fighter/move/("up"/"left"/"down"/"right")
+# street-fighter/move/up
+# street-fighter/move/down
+# street-fighter/move/left
+# street-fighter/move/right
+{
+    "position" {
+    "x" : 1,
+    "y" : 1
+    }
+}
+
+Datos en backend
+allFighters
+curPosition
