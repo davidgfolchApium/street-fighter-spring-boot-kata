@@ -1,5 +1,6 @@
 package com.restapisample.usecase;
 
+import com.restapisample.model.Position;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
 public class GetCurrentPosition {
 
     public Response execute() {
+
         // TODO get x,y from database
         return Response.builder()
                 .position(Position.builder()
@@ -17,14 +19,6 @@ public class GetCurrentPosition {
                         .y(1)
                         .build())
                 .build();
-    }
-
-    @AllArgsConstructor
-    @Data
-    @Builder
-    public static class Position {
-        private int x;
-        private int y;
     }
 
     @AllArgsConstructor
