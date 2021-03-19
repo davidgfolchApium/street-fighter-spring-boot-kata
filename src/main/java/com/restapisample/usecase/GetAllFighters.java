@@ -1,7 +1,6 @@
 package com.restapisample.usecase;
 
 import com.restapisample.dao.StreetFighterDao;
-import com.restapisample.model.Position;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,14 +8,14 @@ import org.springframework.stereotype.Service;
 
 @AllArgsConstructor
 @Service
-public class GetCurrentPosition {
+public class GetAllFighters {
 
     StreetFighterDao dao;
 
     public Response execute() {
-        Position result = dao.getCurrentPosition();
+        String[][] result = dao.getAllFighters();
         return Response.builder()
-                .position(result)
+                .allFigthers(result)
                 .build();
     }
 
@@ -24,6 +23,7 @@ public class GetCurrentPosition {
     @Data
     @Builder
     public static class Response {
-        Position position;
+        String[][] allFigthers;
     }
+
 }

@@ -1,26 +1,27 @@
 package com.restapisample.dao;
 
 import com.restapisample.model.Position;
+import lombok.Getter;
 import org.springframework.stereotype.Repository;
 
 @Repository
+@Getter
 public class StreetFighterDao {
 
-    Position currentPosition;
+    private final String[][] allFighters = new String[][]{
+            new String[] {      "",    "Ryu",  "E.Honda",  "Cammy",  "Blanka",   "Guile",        "", "Chun Li" },
+            new String[] {"Balrog",    "Ken",  "Chun Li",       "", "M.Bison", "Zangief", "Dhalsim", "Sagat"},
+            new String[] {  "Vega",       "", "Fei Long", "Balrog",  "Deejay",   "Cammy",        "", "T.Hawk" },
+    };
 
-    public StreetFighterDao() {
-        currentPosition = Position.builder()
-                .x(1)
-                .y(1)
-                .build();
-    }
-
-    public Position getCurrentPosition() {
-        return currentPosition;
-    }
+    private final Position currentPosition = Position.builder()
+            .x(1)
+            .y(1)
+            .build();
 
     public void setPosition(Position position) {
         currentPosition.setX(position.getX());
         currentPosition.setY(position.getY());
     }
+
 }
